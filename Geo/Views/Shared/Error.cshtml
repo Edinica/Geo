@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Ошибка";
+}
+
+@if (ViewBag.Message == "user")
+{
+    <h1 class="text-danger" style="text-align:center">Ошибка</h1>
+    <h2 class="text-danger" style="text-align:center">У Вас не достаточно прав для работы с данным разделом</h2>
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Geo.Models.Building>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+    @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Название здания
+            @* @Html.DisplayNameFor(model => model.Nameof)*@
+        </th>
+        <th>
+            Адрес
+           @* @Html.DisplayNameFor(model => model.Address)*@
+        </th>
+        <th>Список действий</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nameof)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+            @if (User.IsInRole("Admin"))
+            {
+                <div margin: 0px 4px;>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                </div>
+                <div margin: 0px 4px;>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </div>
+                <div margin: 0px 4px;>
+                    @Html.ActionLink("Plan", "Plan", new { id = item.Id })
+                </div>     
+             }
+</td>
+    </tr>
+}
+
+</table>
