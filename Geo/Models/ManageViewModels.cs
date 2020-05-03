@@ -118,9 +118,20 @@ public class Floor
     {
         Points = new List<Point>();
     }
+        public Floor(string Description, int Level, int? BuildingId) 
+        {
+            this.Description = Description;
+            this.Level = Level;
+            this.BuildingId = BuildingId;
+        }
 
+        public Floor(string Description, int Level)
+        {
+            this.Description = Description;
+            this.Level = Level;
+        }
 
-}
+    }
     
     public class Building
     {
@@ -131,6 +142,23 @@ public class Floor
         public Building()
         {
             Floors = new List<Floor>();
+        }
+        public Building(string Nameof, string Address, ICollection<Floor> Floors) 
+        {
+
+            this.Nameof = Nameof;
+            this.Address = Address;
+            foreach (var element in Floors) 
+            {
+                element.BuildingId = this.Id;
+            }
+            this.Floors = Floors;
+        }
+
+        public Building(string Nameof, string Address)
+        {
+            this.Nameof = Nameof;
+            this.Address = Address;
         }
     }
     public class MapRedactor
