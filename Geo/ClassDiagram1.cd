@@ -17,12 +17,12 @@
   <Class Name="Geo.Controllers.BuildingsController">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACARAACAAAAABAAAAAEAAEADAAEAAAAAAAA=</HashCode>
       <FileName>Controllers\BuildingsController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Geo.Controllers.FloorsController">
-    <Position X="3" Y="3.5" Width="1.5" />
+    <Position X="3" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
       <FileName>Controllers\FloorsController.cs</FileName>
@@ -45,12 +45,12 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAABACAQiAAgAAAAEFhAAAAAAEAIMIAAEEEgAAkAAA=</HashCode>
+      <HashCode>AAAABACAQiAAgAAAAEFhAAAAAAEAIMIAAEEEgBAkAAA=</HashCode>
       <FileName>Controllers\ManageController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Geo.Controllers.MapRedactorController">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Controllers\MapRedactorController.cs</FileName>
@@ -61,6 +61,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\UserEditerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Geo.Controllers.PointsController">
+    <Position X="16" Y="3" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Geo.Controllers.PointsController.YourClass" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\PointsController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAQAAAAAAAAAAAACAAAAAAAAAEACAAAACA=</HashCode>
+      <FileName>Controllers\PointsController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Geo.App_Start
 {
-    public class TestController : Controller
+    public class TestController 
     {
         private static ApplicationDbContext db = new ApplicationDbContext();
         

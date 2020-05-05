@@ -122,7 +122,6 @@ namespace Geo.Controllers
             // Приведенный ниже код защищает от атак методом подбора, направленных на двухфакторные коды. 
             // Если пользователь введет неправильные коды за указанное время, его учетная запись 
             // будет заблокирована на заданный период. 
-            // Параметры блокирования учетных записей можно настроить в IdentityConfig
             var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
@@ -285,13 +284,10 @@ namespace Geo.Controllers
                 msg.SubjectEncoding = System.Text.Encoding.GetEncoding(1251);
                 msg.Subject = "Forgot password";
                 msg.IsBodyHtml = true;
-                // Дополнительные сведения о включении подтверждения учетной записи и сброса пароля см. на странице https://go.microsoft.com/fwlink/?LinkID=320771.
                 // Отправка сообщения электронной почты с этой ссылкой
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                //msg.Body = string.Format("Для завершения регистрации перейдите по ссылке:" +
-                //                "<a href=\"{0}\" title=\"Подтвердить регистрацию\">{0}</a>",
-                //    Url.Action("ConfirmEmail", "Account", new { Token = user.Id, Email = user.Email }, Request.Url.Scheme));
+               
 
 
                 msg.Body = string.Format("Сбросьте ваш пароль, щелкнув <a href=\"{0}\">здесь</a>",
