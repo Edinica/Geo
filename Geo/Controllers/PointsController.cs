@@ -34,6 +34,18 @@ namespace Geo.Controllers
             public string secondx { get; set; }
             public string secondy { get; set; }
         }
+
+        public class Square
+        {
+            public string firstx { get; set; }
+            public string firsty { get; set; }
+            public string secondx { get; set; }
+            public string secondy { get; set; }
+            public string thirdx { get; set; }
+            public string thirdy { get; set; }
+            public string fourthx { get; set; }
+            public string fourthy { get; set; }
+        }
         public Point Similar(int x, int y) 
         {
             var points = db.Points.ToList();
@@ -53,13 +65,48 @@ namespace Geo.Controllers
         {
             var pointslist = db.Points.ToList();
             var res = Similar(Convert.ToInt32(po.firstx), Convert.ToInt32(po.firsty));
-            //Point newp = new Point();
-            //newp.X = Convert.ToInt32(po.firstx);
-            //newp.Y = Convert.ToInt32(po.firsty);
-            //newp.PointId = pointslist.Count() + 1;
-            ////var obj = po;
-            //db.Points.Add(newp);
-            //db.SaveChanges();
+            Point newp = new Point();
+            if (res == null)
+            {
+
+                newp.X = Convert.ToInt32(po.firstx);
+                newp.Y = Convert.ToInt32(po.firsty);
+                db.Points.Add(newp);
+                db.SaveChanges();
+            }
+            else { newp = res; }
+            var res2 = Similar(Convert.ToInt32(po.secondx), Convert.ToInt32(po.secondy));
+            if (res2 == null)
+            {
+
+                Point newp2 = new Point();
+                newp2.X = Convert.ToInt32(po.secondx);
+                newp2.Y = Convert.ToInt32(po.secondy);
+                var last = db.Points.ToList().FirstOrDefault(x => x.X == newp.X && x.Y == newp.Y);
+                last.points.Add(newp2);
+                db.Points.Add(newp2);
+                db.SaveChanges();
+            }
+            else 
+            {
+                var last = db.Points.ToList().FirstOrDefault(x => x.X == newp.X && x.Y == newp.Y);
+                last.points.Add(res2);
+                db.Points.Add(res2);
+                db.SaveChanges();
+            }
+
+        }
+        public void AddSquare([FromBody] Square po)
+        {
+            var pointslist = db.Points.ToList();
+            var res = Similar(Convert.ToInt32(po.firstx), Convert.ToInt32(po.firsty));
+            Point newp = new Point();
+            newp.X = Convert.ToInt32(po.firstx);
+            newp.Y = Convert.ToInt32(po.firsty);
+            newp.PointId = pointslist.Count() + 1;
+            //var obj = po;
+            db.Points.Add(newp);
+            db.SaveChanges();
         }
 
         //[HttpGet]

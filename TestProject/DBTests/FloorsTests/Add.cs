@@ -10,12 +10,14 @@ namespace TestProject.DBTests.FloorsTests
 	public class Add
 	{
         ApplicationDbContext context = new ApplicationDbContext();
+        
         [TestInitialize()]
         public void MyTestInitialize()
         {
+            //context.Database.Create();
             // очистка контекста
 
-            TestController.RefrashDb(true);
+            //TestController.RefrashDb(true);
 
         }
 
@@ -37,10 +39,14 @@ namespace TestProject.DBTests.FloorsTests
         [TestMethod]
         public void AddOne()
         {
-           
+            
+            //context.Database.Delete();
+
             // Arrange   -------------------------------------    
             Floor Floor = new Floor("Floor1",1);
-            TestController.AddFloor(Floor);
+            var p = context.Floors.ToString();
+            //TestController.AddFloor(Floor);
+            context.Floors.Add(Floor);
 
 
             // Act   -----------------------------------------        

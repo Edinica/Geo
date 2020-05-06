@@ -351,6 +351,7 @@
     <Content Include="Views\Manage\ChangeLogin.cshtml" />
     <Content Include="Views\UserEditer\Delete.cshtml" />
     <Content Include="Views\UserEditer\Admin.cshtml" />
+    <Content Include="Views\UserEditer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

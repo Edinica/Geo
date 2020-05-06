@@ -105,6 +105,10 @@ namespace Geo.Models
         public int? FloorId { get; set; }
         public Floor Floor { get; set; }
         public List<Point> points { get; set; }
+        public Point() 
+        {
+            points = new List<Point>();
+        }
     }
 public class Floor
 {

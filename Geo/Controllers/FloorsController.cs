@@ -43,6 +43,12 @@ namespace Geo.Controllers
             return View();
         }
 
+        //public void AddFloor(Floor floor)
+        //{
+        //    if (floor == null) return;
+        //    db.Floors.Add(floor);
+        //    db.SaveChanges();
+        //}
         // POST: Floors/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

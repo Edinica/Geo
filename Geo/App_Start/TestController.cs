@@ -56,6 +56,7 @@ namespace Geo.App_Start
         public static void AddFloor(Floor floor)
         {
             if (floor == null) return;
+            var p = db.Floors.ToList();
             db.Floors.Add(floor);
             db.SaveChanges();
         }

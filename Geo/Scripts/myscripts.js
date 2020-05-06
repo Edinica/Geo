@@ -218,7 +218,7 @@ if (window.addEventListener) {
                             type: "POST",
                                 contentType: "application/json; charset=utf-8",
                             dataType: "json",
-                            data: JSON.stringify({ firstx: ev._x - cx, firsty: cy - ev._y, secondx: mdx - cx, secondy: cy - mdy }),
+                            data: JSON.stringify({ firstx: mdx - cx, firsty: cy - mdy , secondx: ev._x - cx, secondy: cy - ev._y }),
                                             success: function () {
 
                             }

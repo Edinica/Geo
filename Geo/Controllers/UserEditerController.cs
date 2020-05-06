@@ -74,5 +74,19 @@ namespace Geo.Controllers
             //db.SaveChanges();
             return RedirectToAction("UserEditer");
         }
+        [Authorize]
+        public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ApplicationUser user = db.Users.FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
     }
 }
