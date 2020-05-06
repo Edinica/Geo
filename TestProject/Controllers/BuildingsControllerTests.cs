@@ -36,7 +36,8 @@ namespace TestProject.Controllers
 			var result = buildingsController.Index();
 
 			// Assert
-			Assert.Fail();
+			//Assert.Fail();
+			Assert.IsNotNull(result);
 			this.mockRepository.VerifyAll();
 		}
 
