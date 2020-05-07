@@ -43,6 +43,10 @@ namespace Geo.Controllers
             return View();
         }
 
+        public void AddFloor(Floor floor) 
+        {
+        
+        }
         // POST: Floors/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.

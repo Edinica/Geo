@@ -21,7 +21,7 @@ namespace Geo.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Geo", throwIfV1Schema: false)
         {
         }
 

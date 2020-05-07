@@ -118,9 +118,16 @@ public class Floor
     {
         Points = new List<Point>();
     }
+        public Floor(int id, int level, string description)
+        {
+            this.Id = id;
+            this.Level = level;
+            this.Description = description;
+        }
 
 
-}
+
+    }
     
     public class Building
     {
@@ -130,6 +137,13 @@ public class Floor
         public ICollection<Floor> Floors { get; set; }
         public Building()
         {
+            Floors = new List<Floor>();
+        }
+        public Building(int id, string name, string address) 
+        {
+            this.Id = id;
+            this.Nameof = name;
+            this.Address = address;
             Floors = new List<Floor>();
         }
     }

@@ -18,6 +18,7 @@ namespace Geo.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            var xxx = db.Buildings.ToList();
             return View(db.Buildings.ToList());
         }
 
